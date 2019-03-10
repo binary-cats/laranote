@@ -1,0 +1,56 @@
+{
+    "name": "binary-cats/laranote",
+    "description": "Comment service for Laravel application",
+    "keywords": [
+        "binary-cats",
+        "laravel",
+        "email",
+        "laravel-mail-helpers"
+    ],
+    "license": "MIT",
+    "homepage": "https://bitbucket.org/binary-cats/laranote",
+    "authors": [
+        {
+            "name": "Cyrill N Kalita",
+            "email": "cyrill.kalita@gmail.com",
+            "homepage": "https://bitbucket.org/binary-cats",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BinaryCats\\Laranote\\LaranoteServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "BinaryCats\\Laranote\\": "src/"
+        },
+        "files": [
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BinaryCats\\Laranote\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    }
+}
