@@ -5,11 +5,13 @@ namespace BinaryCats\Laranote\Domains\Note\Models;
 use BinaryCats\Laranote\Contracts\Note as NoteModel;
 use BinaryCats\Laranote\Exceptions\NoteException;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Note extends Model implements NoteModel
 {
+    use SoftDeletes;
     use Concerns\HasAttributes;
     use Concerns\Scopes;
 
@@ -41,6 +43,15 @@ class Note extends Model implements NoteModel
      */
     protected $casts = [
         'is_private',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'deleted_at',
     ];
 
     /**
