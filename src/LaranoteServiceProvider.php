@@ -105,5 +105,7 @@ class LaranoteServiceProvider extends ServiceProvider
         $this->publishes([
             "{$this->path}/../resources/views" => resource_path("views/{$this->name}"),
         ], 'views');
+
+        return $this;
     }
 }
