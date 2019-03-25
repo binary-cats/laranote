@@ -2,6 +2,7 @@
 
 namespace BinaryCats\Laranote\Domains\Note\Models;
 
+use BinaryCats\Laranote\HasManyNotes;
 use BinaryCats\Laranote\Contracts\Note as NoteModel;
 use BinaryCats\Laranote\Exceptions\NoteException;
 use Illuminate\Database\Eloquent\Model;
@@ -14,6 +15,8 @@ class Note extends Model implements NoteModel
     use SoftDeletes;
     use Concerns\HasAttributes;
     use Concerns\Scopes;
+    use HasManyNotes;
+
 
     /**
      * The attributes that are mass assignable.
