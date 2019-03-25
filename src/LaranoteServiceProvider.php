@@ -38,19 +38,9 @@ class LaranoteServiceProvider extends ServiceProvider
     {
         $this->publishConfig()
              ->publishMigrations()
-             ->publishViews();
-    }
-
-    /**
-     * Register the service provider
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->mergeConfig()->mergeViews();
-
-        parent::register();
+             ->publishViews()
+             ->mergeConfig()
+             ->mergeViews();
     }
 
     /**
